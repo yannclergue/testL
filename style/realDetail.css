@@ -1,0 +1,177 @@
+/* Règle spécial pour le h1 des détails des réals */
+
+h1{
+    margin-bottom: 10px;
+}
+
+/* Code permetant de faire l'effet de paralax */
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    scrollbar-width: none;
+}
+
+.wrapElement {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.wrapbackground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.wrapbackground {
+    transform: translateZ(-50px) scale(6);
+}
+
+svg {
+    animation: rebondBas 3s forwards infinite linear;
+}
+
+@keyframes rebondBas {
+    0% {
+        transform: translateY(0px);
+    }
+    30% {
+        transform: translateY(-15px);
+    }
+    70% {
+        transform: translateY(20px);
+    }
+}
+
+/* Fin du code pour le paralax */
+
+/* Code pour le contenue en deuxième partie de page */
+
+section {
+    background-color: var(--violet);
+}
+
+.backColor {
+    background-color: var(--violet);
+}
+
+.content {
+    margin: 0px auto;
+    max-width: var(--width);
+}
+
+.content h1 {
+    padding-top: 2%;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 60px;
+    align-items: center;
+}
+
+.logoEtTexte {
+    gap: 10px;
+    display: grid;
+    place-items: center;
+}
+
+/* Code pour les boutons de la galère en bas */
+
+.direction {
+    display: flex;
+    justify-content: space-between;
+}
+
+.direction p {
+    color: var(--jaune);
+    font-size: bold;
+}
+
+.cliquable {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lienVersSite {
+    border: 1px solid var(--rose);
+    padding: 20px 40px;
+    transition: 0.4s;
+}
+
+
+.lienVersSite:hover, 
+.lienVersSite:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@media (max-width: 600px) {
+
+    /* Définition de la hauteur du wrapper sur auto pour s'adapapter à toutes les tailes d'écran */
+
+    .wrapper {
+        height: auto;
+    }
+
+    .wrapElement svg {
+        display: none;
+    }
+
+    /* Code pour le contenu écrit, comprenant les explications du projet ainsi que l'image */
+
+    .content {
+        margin-top: -50px;
+    }
+    
+    #grid {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 0px;
+        place-items: center;
+    }
+
+    #grid div img {
+        max-width: 150px;
+        width: 150px;
+    }
+
+    #grid div:last-child {
+        display: grid;
+        place-items: center;
+        margin-bottom: 20px;
+    }
+
+    .centre {
+        margin-left: inherit;
+        text-align: center;
+    }
+
+    /* Code pour le bouton ainsi que les fléches de direction en bas */
+
+    .lienVersSite:hover {
+        transform: scale(1.1);
+        transition: 0.4s;
+    }
+
+    .lienVersSite {
+        background-color: var(--rose);
+        padding: 15px 20px;
+        transition: 0.4s;
+    }
+
+
+}

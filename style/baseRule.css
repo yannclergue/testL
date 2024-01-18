@@ -1,0 +1,123 @@
+/******************************/
+/* Création des variables */
+/******************************/
+
+:root {
+    --width: 1220px;
+    --rose: #ffffff;
+    --violet: #495057;
+    --jaune: #000000;
+    --blanc: #ffffff;
+    --temps: 1.5s
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:before, *:after {
+    box-sizing: inherit;
+}
+
+/******************************/
+/* Style qui ne change pas ou presque */
+/******************************/
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto';
+}
+
+h1 {
+    font-size: 10em;
+    color: var(--jaune);
+    line-height: 0.8;
+}
+
+h2 {
+    margin: 7vh 0px;
+    font-size: 5em;
+    max-width: var(--width);
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--jaune);
+}
+
+h3 {
+    font-size: 3em;
+    color: var(--jaune);
+}
+
+p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    font-family: poppins;
+    color: black;
+}
+
+em {
+    color: var(--jaune);
+    font-size: 2em;
+}
+
+
+
+a.underline, a {
+    text-decoration: none;
+    font-family: poppins;
+
+}
+
+
+
+a:visited {
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+@media (max-width: 600px) {
+    :root {
+        --width: 400px
+    }
+
+    h1 {
+        font-size: 4.3em;
+    }
+
+    h2 {
+        margin: 2vh 0px;
+        font-size: 2em;
+        max-width: var(--width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+        line-height: 1.2;
+        margin: 20px 0px;
+    }
+}
